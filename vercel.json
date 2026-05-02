@@ -1,10 +1,11 @@
 {
   "functions": {
-    "ybadu_api/**/*.php": {
+    "**/*.php": {
       "runtime": "vercel-php@0.7.1"
     }
   },
   "routes": [
-    { "src": "/(.*)", "dest": "/ybadu_api/$1" }
+    { "src": "/ybadu_api/(.*)", "dest": "/ybadu_api/$1" },
+    { "src": "/(.*)", "dest": "/$1" }
   ]
 }
