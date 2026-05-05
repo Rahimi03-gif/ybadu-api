@@ -2,10 +2,10 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "ybadu_db";
+$servername = "bxmkd2ihw6des1k2f5sj-mysql.services.clever-cloud.com";
+$username = "uy8alfs1bngroj2y";
+$password = "diFFS6NYxIHOS7jChxoQ";
+$dbname = "bxmkd2ihw6des1k2f5sj";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 
