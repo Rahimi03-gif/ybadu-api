@@ -1,6 +1,6 @@
 <?php
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
+error_reporting(0);
+ini_set('display_errors', 0);
 
 $servername = "bxmkd2ihw6des1k2f5sj-mysql.services.clever-cloud.com";
 $username = "uy8alfs1bngroj2y";
