@@ -14,7 +14,7 @@ $address     = trim($_POST['address'] ?? '');
 $image_path  = null; // Inisialisasi laluan gambar sebagai null
 
 // Debug
-file_put_contents("debug_log.txt", "Received email: $user_email\n", FILE_APPEND);
+//file_put_contents("debug_log.txt", "Received email: $user_email\n", FILE_APPEND); 
 
 // Validate basic fields
 if (empty($user_email) || empty($category) || empty($area) || empty($description)) {
