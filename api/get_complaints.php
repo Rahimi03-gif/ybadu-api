@@ -1,17 +1,18 @@
 <?php
 header("Content-Type: application/json");
-$conn = new mysqli("localhost", "root", "", "ybadu_db");
 
-if ($conn->connect_error) {
-    echo json_encode(["success" => false, "message" => "Connection failed"]);
-    exit;
-}
+// 1. GUNA DATABASE CLOUD (PENTING!)
+include 'db_connection.php'; 
+
+// 2. TUTUP PAPARAN RALAT
+error_reporting(0);
+ini_set('display_errors', 0);
 
 $user_email = isset($_GET['user_email']) ? $conn->real_escape_string($_GET['user_email']) : '';
 
 if ($user_email !== '') {
     $query = "
-        SELECT a.*, a.image_path AS image_url, u.role,  /* <-- PENTING: TAMBAH BARIS INI */
+        SELECT a.*, a.image_path AS image_url, u.role,
             (
                 SELECT cs.status_name
                 FROM complaint_status cs
@@ -26,7 +27,7 @@ if ($user_email !== '') {
     ";
 } else {
     $query = "
-        SELECT a.*, a.image_path AS image_url, u.role, /* <-- PENTING: TAMBAH BARIS INI */
+        SELECT a.*, a.image_path AS image_url, u.role,
             (
                 SELECT cs.status_name
                 FROM complaint_status cs
